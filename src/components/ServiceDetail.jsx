@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { SERVICES_CONTENT } from "../utils/constants/text";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function ServiceDetail() {
   const { id } = useParams();
@@ -193,13 +194,14 @@ export default function ServiceDetail() {
 
         {/* Call-to-Action */}
         <motion.div className="text-center mt-12" variants={fadeUp}>
-          <motion.button
+          <Link
+              to="/contact"
             className="px-8 py-3 text-white bg-[#DC2828] rounded-full font-semibold hover:bg-transparent hover:text-[#DC2828] hover:border hover:border-[#DC2828] transition"
             whileHover={{ scale: 1.05, backgroundColor: "none", color: "#DC2828" }}
             whileTap={{ scale: 0.95 }}
           >
             Contact Us for {service.title}
-          </motion.button>
+          </Link>
         </motion.div>
 
       </motion.div>
