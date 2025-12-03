@@ -19,7 +19,7 @@ export default function ServicesSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <button className="px-6 py-2 bg-[#0F1623] rounded-lg border font-semibold border-gray-700 text-sm xl:text-lg text-[#DC2828]">
+          <button className="px-6 py-2 rounded-lg border font-semibold border-[#1E293B] text-sm xl:text-lg text-[#DC2828]">
             {sectionTag}
           </button>
            <h2 className="text-4xl sm:text-5xl font-bold leading-tight">

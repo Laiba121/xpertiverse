@@ -26,7 +26,7 @@ const WorkingTechnologies = () => {
 
         <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
           <span className="text-white">{projectSectionText.titleLine1}</span>
-          <br />
+        
           <span className="bg-linear-to-r from-[#F56716] to-[#EA4920] text-transparent bg-clip-text">
             {projectSectionText.titleLine2}
           </span>

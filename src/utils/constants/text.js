@@ -13,12 +13,12 @@ export const HEADER_CONTENT = {
 
 
 
-import AiFinance from "../../assets/images/hero6.png";
+import AiFinance from "../../assets/images/hero-img1.jpeg";
 
 export const HERO_CONTENT = {
   badge: "Launch Your Professional Tech Website.",
-  heading1: "Transform Your",
-  heading2: "Digital Future",
+  heading1: "Innovate-Automate-Elevate",
+  heading2: "Your Digital Future",
   description: "Combining expertise with the latest technology trends to create impactful results.",
   buttons: {
     primary: "Get Started",
@@ -534,7 +534,7 @@ export const HERO_TECH_CONTENT = {
 export const projectSectionText = {
   topButton: "Portfolio",
   titleLine1: "Project's",
-  titleLine2: "We've Delivered",
+  titleLine2: " We've Delivered",
   description:
     "Delivering innovative solutions using modern technologies across multiple industries.",
   viewAllBtn: "View All Projects",
