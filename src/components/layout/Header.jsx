@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/Logo.png";
 import { HEADER_CONTENT } from "../../utils/constants/text";
 import { useNavigate, useLocation } from "react-router-dom";
 
