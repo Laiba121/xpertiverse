@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
-import Logo from "../../assets/images/logo1.png";
+import Logo from "../../assets/images/logo.png";
 import { HEADER_CONTENT } from "../../utils/constants/text";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -72,7 +72,7 @@ const Header = () => {
           <img src={Logo} className="w-20 h-12 object-contain" />
           <div>
             <h2 className="text-3xl font-semibold">{logo}</h2>
-            <p className="text-xs text-[#9016B5]">{tagline}</p>
+            <p className="text-xs bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent">{tagline}</p>
           </div>
         </div>
 
@@ -91,14 +91,29 @@ const Header = () => {
 
 
         {/* Desktop Button → always go to contact page */}
-        <button
-          onClick={() => navigate("/contact")}
-          className="hidden lg:flex px-6 py-2 rounded-lg bg-[#9016B5]
-                text-white hover:bg-transparent border border-[#9016B5] hover:text-[#9016B5]  hover:cursor-pointer
-                transition font-medium shadow-md"
-        >
-          {buttonText}
-        </button>
+      <button
+  onClick={() => navigate("/contact")}
+  className="
+    cursor-pointer
+    px-6 py-2 rounded-md w-full sm:w-auto text-center
+    transition-all duration-300
+
+    /* Default State */
+    bg-gradient-to-r from-[#9016B5] to-[#245EBD]
+    text-white
+    border border-transparent
+
+    /* Hover State */
+    hover:bg-transparent
+    hover:border-[#9016B5]
+    hover:text-transparent
+    hover:bg-clip-text
+    hover:bg-gradient-to-r hover:from-[#9016B5] hover:to-[#245EBD]
+  "
+>
+  {buttonText}
+</button>
+
 
         {/* Mobile Menu Icon */}
         <button className="lg:hidden text-[#DC2828] text-2xl" onClick={() => setMobileMenu(true)}>
@@ -130,13 +145,29 @@ const Header = () => {
           ))}
 
           {/* Mobile Button → navigate to contact page */}
-          <button
-            onClick={() => navigate("/contact")}
-            className="mt-6 px-5 py-2 rounded-lg bg-[#9016B5] text-white 
-                font-medium shadow-md hover:opacity-90 transition"
-          >
-            {buttonText}
-          </button>
+        <button
+  onClick={() => navigate("/contact")}
+  className="
+    cursor-pointer
+    px-6 py-2 rounded-md w-full sm:w-auto text-center
+    transition-all duration-300
+
+    /* Default State */
+    bg-gradient-to-r from-[#9016B5] to-[#245EBD]
+    text-white
+    border border-transparent
+
+    /* Hover State */
+    hover:bg-transparent
+    hover:border-[#9016B5]
+    hover:text-transparent
+    hover:bg-clip-text
+    hover:bg-gradient-to-r hover:from-[#9016B5] hover:to-[#245EBD]
+  "
+>
+  {buttonText}
+</button>
+
         </ul>
       </motion.div>
     </motion.header>

@@ -1,6 +1,6 @@
 export const HEADER_CONTENT = {
   logo: "Xpertiverse",
-  tagline: "Technology & IT Solutions",
+  tagline: "Innovate-Automate-Elevate",
   mainMenu: [
     { label: "Home", id: "home" },
     { label: "About", id: "about" },
@@ -19,7 +19,7 @@ export const HERO_CONTENT = {
   badge: "Launch Your Professional Tech Website.",
   heading1: "Innovate-Automate-Elevate",
   heading2: "Your Digital Future",
-  description: "Combining expertise with the latest technology trends to create impactful results.",
+  description: "We merge proven expertise with the latest technology innovations to build solutions that drive real impact, long-term value, and measurable success.",
   buttons: {
     primary: "Get Started",
     secondary: "Learn More",
