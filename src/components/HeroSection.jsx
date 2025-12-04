@@ -35,13 +35,18 @@ const HeroSection = () => {
             {HERO_CONTENT.badge}
           </p>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-8xl font-semibold block text-white whitespace-nowrap">
-            {HERO_CONTENT.heading1}
-          </h1>
+         <h1
+  className="font-semibold block text-white whitespace-nowrap text-[2rem] sm:text-[3rem] md:text-[2rem] lg:text-[3rem] xl:text-[5rem] 2xl:text-[6rem]"
+>
+  {HERO_CONTENT.heading1}
+</h1>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-8xl font-semibold mb-4 leading-tight sm:leading-tight lg:leading-relaxed bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent whitespace-nowrap">
-            {HERO_CONTENT.heading2}
-          </h1>
+<h1
+  className="font-semibold mb-4 leading-tight sm:leading-tight lg:leading-relaxed bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent whitespace-nowrap text-[2rem] sm:text-[3rem] md:text-[2rem] lg:text-[3rem] xl:text-[5rem] 2xl:text-[6rem]"
+>
+  {HERO_CONTENT.heading2}
+</h1>
+
 
          <p className="text-gray-300 text-2xl mb-12 leading-relaxed max-w-4xl mx-auto">
   {HERO_CONTENT.description}
