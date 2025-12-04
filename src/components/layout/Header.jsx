@@ -72,7 +72,7 @@ const Header = () => {
           <img src={Logo} className="w-20 h-12 object-contain" />
           <div>
             <h2 className="text-3xl font-semibold">{logo}</h2>
-            <p className="text-xs text-[#DC2828]">{tagline}</p>
+            <p className="text-xs text-[#9016B5]">{tagline}</p>
           </div>
         </div>
 
@@ -93,8 +93,8 @@ const Header = () => {
         {/* Desktop Button → always go to contact page */}
         <button
           onClick={() => navigate("/contact")}
-          className="hidden lg:flex px-6 py-2 rounded-lg bg-[#DC2828]
-                text-white hover:bg-transparent border border-[#DC2828] hover:text-[#DC2828]  hover:cursor-pointer
+          className="hidden lg:flex px-6 py-2 rounded-lg bg-[#9016B5]
+                text-white hover:bg-transparent border border-[#9016B5] hover:text-[#9016B5]  hover:cursor-pointer
                 transition font-medium shadow-md"
         >
           {buttonText}
@@ -115,14 +115,14 @@ const Header = () => {
         className="fixed top-0 right-0 h-full w-64 bg-[#080F20] z-50 shadow-lg px-6 py-4"
       >
         <div className="flex justify-end mb-6">
-          <FaTimes size={22} className="cursor-pointer text-[#DC2828]" onClick={() => setMobileMenu(false)} />
+          <FaTimes size={22} className="cursor-pointer text-[#9016B5]" onClick={() => setMobileMenu(false)} />
         </div>
 
         <ul className="flex flex-col gap-5 text-md">
           {mainMenu.map((item, i) => (
             <li
               key={i}
-              className="cursor-pointer hover:text-[#DC2828]"
+              className="cursor-pointer hover:text-[#9016B5]"
               onClick={() => handleNavigation(item.id)}
             >
               {item.label}
@@ -132,7 +132,7 @@ const Header = () => {
           {/* Mobile Button → navigate to contact page */}
           <button
             onClick={() => navigate("/contact")}
-            className="mt-6 px-5 py-2 rounded-lg bg-[#DC2828] text-white 
+            className="mt-6 px-5 py-2 rounded-lg bg-[#9016B5] text-white 
                 font-medium shadow-md hover:opacity-90 transition"
           >
             {buttonText}
