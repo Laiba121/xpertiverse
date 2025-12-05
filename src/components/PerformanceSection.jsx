@@ -23,11 +23,17 @@ export default function PerformanceSection() {
 
   const statItem = {
     hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    hover: {
+      scale: 1.08,
+      y: -5,
+      textShadow: "0 0 15px #9016B5, 0 0 25px #245EBD",
+      transition: { duration: 0.4, ease: "easeInOut" }
+    }
   };
 
   return (
-    <section ref={ref} className="bg-black text-gray-200 py-20 px-4 sm:px-6 lg:px-20">
+    <section ref={ref} className="bg-black text-white py-20 px-4 sm:px-6 lg:px-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -43,19 +49,17 @@ export default function PerformanceSection() {
             className="text-3xl 2xl:text-4xl font-semibold leading-tight"
           >
             <span className="text-white whitespace-nowrap">
-            {PERFORMANCE_TEXT.heading}
+              {PERFORMANCE_TEXT.heading}
             </span><br />
-          
-           <span class="bg-linear-to-r from-[#F56716] to-[#EA4920] text-transparent bg-clip-text">
-            {PERFORMANCE_TEXT.heading1}
+            <span className="bg-gradient-to-r from-[#9016B5] to-[#245EBD] text-transparent bg-clip-text">
+              {PERFORMANCE_TEXT.heading1}
             </span>
-        
           </motion.h2>
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={inView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-400 mt-0 xl:mt-4 lg:mx-0 text-base md:text-base"
+            className="text-gray-300 mt-0 xl:mt-4 lg:mx-0 text-base md:text-base"
           >
             {PERFORMANCE_TEXT.description}
           </motion.p>
@@ -76,13 +80,14 @@ export default function PerformanceSection() {
               <motion.div
                 key={index}
                 variants={statItem}
-                className="text-center lg:text-left w-32 sm:w-36 md:w-40 2xl:w-44 mb-6 lg:mb-0"
+                whileHover="hover"
+                className="text-center lg:text-left w-32 sm:w-36 md:w-40 2xl:w-44 mb-6 lg:mb-0 cursor-pointer"
               >
-                <h3 className="text-3xl 2xl:text-4xl font-semibold">
+                <h3 className="text-3xl 2xl:text-4xl font-semibold text-white">
                   {startCount ? <CountUp end={numericValue} duration={2} /> : 0}
                   {symbol}
                 </h3>
-                <p className="text-[#DC2828] mt-1 text-sm 2xl:text-base">
+                <p className="bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent mt-1 text-sm 2xl:text-base font-semibold">
                   {item.label}
                 </p>
               </motion.div>

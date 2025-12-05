@@ -23,7 +23,7 @@ const CompanyContact = () => {
               className="flex items-center justify-between gap-4 py-6 px-4 border border-gray-500/40 rounded-lg w-full lg:w-1/3"
             >
               <div className="flex flex-col">
-                <h2 className="text-[#DC2828] text-[25px] font-semibold">
+                <h2 className="bg-gradient-to-r from-[#9016B5] to-[#245EBD] text-transparent bg-clip-text text-[25px] font-semibold">
                   {item.heading}
                 </h2>
 
@@ -41,7 +41,7 @@ const CompanyContact = () => {
                 />
               </div>
 
-              <div className="text-white text-[30px] bg-[#DC2828] px-5 py-4 rounded-lg flex items-center justify-center">
+              <div className="text-white text-[30px] bg-gradient-to-r from-[#9016B5] to-[#245EBD] px-5 py-4 rounded-lg flex items-center justify-center">
                 {icons[item.icon]}
               </div>
             </div>

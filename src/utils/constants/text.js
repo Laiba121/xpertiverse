@@ -166,7 +166,7 @@ export const ABOUT_INNOVATION = {
   ],
 
   miniFeatures: [
-    { icon: "FaHandshake", text: "Innovation First" },
+    { icon: "FaHandsHoldingCircle", text: "Innovation First" },
     { icon: "BsFillPersonCheckFill", text: "Client-Centric" },
     { icon: "VscWorkspaceTrusted", text: "Integrity & Trust" },
     { icon: "IoMdTrophy", text: "Excellence" },

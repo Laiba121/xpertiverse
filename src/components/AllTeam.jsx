@@ -16,22 +16,39 @@ export default function AllTeamMembers() {
   const { Fb, Twitter, Pinterest } = AppIcons;
 
   return (
-    <section className="w-full bg-black text-white py-24 px-4 sm:px-6 lg:px-20">
+    <section className="w-full bg-[#0B0F19] text-white py-24 px-4 sm:px-6 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        {/* Back Button */}
-        <motion.div
-          className="mb-10"
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-        >
-          <button
-            onClick={() => navigate(-1)}
-            className="px-4 py-2 text-sm bg-[#DC2828] text-white rounded-lg hover:bg-transparent hover:text-[#DC2828] hover:border hover:border-[#DC2828] transition"
-          >
-            ← Back
-          </button>
-        </motion.div>
+
+      <motion.div className="mb-10" initial="hidden" animate="visible" variants={fadeUp}>
+  <button
+    onClick={() => navigate(-1)}
+    className="
+      relative overflow-hidden px-4 py-2 rounded-lg w-full sm:w-auto text-center text-xl font-medium
+      border border-[#9016B5] bg-transparent text-white
+      transition-all duration-300 ease-in-out
+      bg-gradient-to-r from-[#9016B5] to-[#245EBD] cursor-pointer
+      hover:scale-105 hover:shadow-xl hover:shadow-purple-500/50
+      before:absolute before:top-0 before:left-0 before:w-0 before:h-full
+      before:bg-gradient-to-r before:from-[#ffffff30] before:to-[#ffffff10] before:animate-glowLine
+      hover:before:w-full
+    "
+  >
+    ← Back
+  </button>
+
+  {/* Keyframes for glow animation */}
+  <style jsx>{`
+    @keyframes glowLine {
+      0% { left: -100%; width: 0; opacity: 0; }
+      50% { left: 0; width: 100%; opacity: 0.5; }
+      100% { left: 100%; width: 0; opacity: 0; }
+    }
+    .before\\:animate-glowLine::before {
+      animation: glowLine 2s linear infinite;
+    }
+  `}</style>
+</motion.div>
+
 
         {/* Page Heading */}
         <motion.h1
@@ -39,16 +56,14 @@ export default function AllTeamMembers() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
         >
-          <span className="text-white">Meet Our</span>
-
-          <span class="bg-linear-to-r from-[#F56716] to-[#EA4920] text-transparent bg-clip-text">
-            {" "}
+          <span className="text-white">Meet Our</span>{" "}
+          <span className="bg-gradient-to-r from-[#9016B5] to-[#245EBD] text-transparent bg-clip-text">
             Team
           </span>
         </motion.h1>
 
         {/* Team Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, i) => (
             <motion.div
               key={i}
@@ -56,10 +71,11 @@ export default function AllTeamMembers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-3xl border border-[#1E293B] bg-[#0F1623] overflow-hidden shadow-xl"
+              className="rounded-3xl border border-[#1E293B] hover:border-gradient-to-r hover:from-[#9016B5] hover:to-[#245EBD] bg-[#121721] overflow-hidden shadow-xl"
             >
               {/* Hover Area Only On Image */}
               <div className="relative h-80 p-4 w-full overflow-hidden group text-center">
+                
                 {/* Image */}
                 <img
                   src={member.img}
@@ -68,28 +84,19 @@ export default function AllTeamMembers() {
                 />
 
                 {/* Overlay */}
-                <div
-                  className="
-                    absolute bottom-0 left-0 right-0 
-                    bg-black/50 
-                    h-22 group-hover:h-35
-                    transition-all duration-900 
-                    flex flex-col justify-end
-                    group-hover:pb-10
-                  "
-                >
-                  <h3 className="text-xl font-semibold transition-all duration-900 group-hover:-translate-y-2">
+                <div className="absolute bottom-0 left-0 right-0 bg-black/50 h-22 group-hover:h-35 transition-all duration-700 flex flex-col justify-end group-hover:pb-10">
+                  <h3 className="text-xl font-semibold text-white transition-all duration-700 group-hover:-translate-y-2">
                     {member.name}
                   </h3>
-                  <p className="text-[#DC2828] text-sm transition-all duration-900 group-hover:-translate-y-2">
+                  <p className="text-white text-sm transition-all duration-700 group-hover:-translate-y-2">
                     {member.role}
                   </p>
 
                   {/* Social Icons */}
                   <div className="flex gap-4 mt-3 opacity-0 justify-center translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                    <Fb className="text-black text-xl cursor-pointer p-1 bg-[#DC2828] rounded-full" />
-                    <Twitter className="text-black text-xl cursor-pointer p-1 bg-[#DC2828] rounded-full" />
-                    <Pinterest className="text-black text-xl cursor-pointer p-1 bg-[#DC2828] rounded-full" />
+                    <Fb className="text-white text-3xl cursor-pointer p-1 bg-gradient-to-r from-[#9016B5] to-[#245EBD] rounded-full" />
+                    <Twitter className="text-white text-3xl cursor-pointer p-1 bg-gradient-to-r from-[#9016B5] to-[#245EBD] rounded-full" />
+                    <Pinterest className="text-white text-3xl cursor-pointer p-1 bg-gradient-to-r from-[#9016B5] to-[#245EBD] rounded-full" />
                   </div>
                 </div>
               </div>

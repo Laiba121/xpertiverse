@@ -1,8 +1,7 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { SERVICES_CONTENT } from "../utils/constants/text";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 export default function ServiceDetail() {
   const { id } = useParams();
@@ -22,7 +21,7 @@ export default function ServiceDetail() {
   };
 
   return (
-    <section className="w-full bg-black text-white py-24 px-4 sm:px-6 lg:px-20">
+    <section className="w-full bg-[#080F20] text-white py-24 px-4 sm:px-6 lg:px-20">
       <motion.div className="max-w-7xl mx-auto flex flex-col space-y-16"
         initial="hidden"
         animate="visible"
@@ -33,7 +32,7 @@ export default function ServiceDetail() {
         <motion.div className="w-full flex justify-start" variants={fadeUp}>
           <button
             onClick={() => navigate(-1)}
-            className="mb-8 px-4 py-2 text-sm bg-[#DC2828] text-white rounded-lg hover:bg-none transition"
+            className="mb-8 px-4 py-2 text-sm bg-gradient-to-r from-[#9016B5] to-[#245EBD] text-white rounded-lg hover:opacity-80 transition"
           >
             ← Back
           </button>
@@ -41,22 +40,19 @@ export default function ServiceDetail() {
 
         {/* Service Header */}
         <motion.div className="text-center space-y-6" variants={fadeUp}>
-          <div className="text-6xl text-red-500 mb-4 flex justify-center">
-            {React.createElement(service.icon, { size: 60 })}
+          <div className="text-6xl mb-4 flex justify-center">
+            {React.createElement(service.icon, { size: 60, className: "text-gradient from-[#9016B5] to-[#245EBD]" })}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
-            <span className="text-white">
-            {service.heading1}
-            </span>
-          
-           <span class="bg-linear-to-r from-[#F56716] to-[#EA4920] text-transparent bg-clip-text">
-            {service.heading2}
+            <span className="text-white">{service.heading1}</span>{" "}
+            <span className="bg-gradient-to-r from-[#9016B5] to-[#245EBD] text-transparent bg-clip-text">
+              {service.heading2}
             </span>
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
+          <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
             {service.desc}
           </p>
-          <p className="text-gray-400 text-lg mt-4 max-w-3xl mx-auto">{longDesc}</p>
+          <p className="text-gray-300 text-lg mt-4 max-w-3xl mx-auto">{longDesc}</p>
         </motion.div>
 
         {/* Images Section */}
@@ -67,7 +63,7 @@ export default function ServiceDetail() {
                 key={idx}
                 src={img}
                 alt={service.title}
-                className="rounded-2xl shadow-lg w-full sm:w-64"
+                className="rounded-2xl shadow-lg w-full sm:w-64 border border-transparent hover:border-gradient-to-r hover:from-[#9016B5] hover:to-[#245EBD]"
                 whileHover={{ scale: 1.05 }}
               />
             ))}
@@ -76,12 +72,12 @@ export default function ServiceDetail() {
 
         {/* Features Section */}
         <motion.div variants={fadeUp}>
-          <h2 className="text-3xl font-bold text-[#DC2828] mb-6 text-center">Features</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent">Features</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
-                className="bg-[#0E1A2A] p-6 rounded-3xl shadow-lg hover:scale-105 transition transform border border-transparent hover:border-[#DC2828]"
+                className="bg-[#0E1A2A] p-6 rounded-3xl shadow-lg hover:scale-105 transition transform border border-transparent hover:border-gradient-to-r hover:from-[#9016B5] hover:to-[#245EBD]"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0, transition: { delay: idx * 0.1 } }}
@@ -94,15 +90,12 @@ export default function ServiceDetail() {
 
         {/* Benefits Section */}
         <motion.div variants={fadeUp}>
-          <h2 className="text-3xl font-bold text-[#DC2828] mb-6 text-center">Benefits</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent">Benefits</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, idx) => (
               <motion.div
                 key={idx}
-                className="bg-[#0E1A2A] p-6 rounded-3xl shadow-lg hover:scale-105 transition transform border border-transparent hover:border-[#DC2828]"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0, transition: { delay: idx * 0.1 } }}
+                className="bg-[#0E1A2A] p-6 rounded-3xl shadow-lg hover:scale-105 transition transform border border-transparent hover:border-gradient-to-r hover:from-[#9016B5] hover:to-[#245EBD]"
               >
                 <h3 className="text-xl font-semibold mb-3">{benefit}</h3>
               </motion.div>
@@ -112,13 +105,13 @@ export default function ServiceDetail() {
 
         {/* Tools Section */}
         <motion.div variants={fadeUp}>
-          <h2 className="text-3xl font-bold text-[#DC2828] mb-6 text-center">Tools & Technologies</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent">Tools & Technologies</h2>
           <div className="flex flex-wrap gap-4 justify-center">
             {tools.map((tool, idx) => (
               <motion.span
                 key={idx}
                 className="px-4 py-2 bg-[#0E1A2A] text-gray-300 rounded-2xl shadow hover:shadow-lg transition"
-                whileHover={{ scale: 1.05, backgroundColor: "#DC2828", color: "#fff" }}
+                whileHover={{ scale: 1.05, backgroundColor: "#9016B5", color: "#fff" }}
               >
                 {tool}
               </motion.span>
@@ -129,7 +122,7 @@ export default function ServiceDetail() {
         {/* Testimonials Section */}
         {testimonials?.length > 0 && (
           <motion.div variants={fadeUp}>
-            <h2 className="text-3xl font-bold text-[#DC2828] mb-6 text-center">Client Testimonials</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent">Client Testimonials</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {testimonials.map((t, idx) => (
                 <motion.div
@@ -138,8 +131,8 @@ export default function ServiceDetail() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0, transition: { delay: idx * 0.1 } }}
                 >
-                  <p className="text-gray-400 italic">"{t.feedback}"</p>
-                  <h4 className="mt-2 font-semibold">{t.name}</h4>
+                  <p className="text-gray-300 italic">"{t.feedback}"</p>
+                  <h4 className="mt-2 font-semibold text-white">{t.name}</h4>
                 </motion.div>
               ))}
             </div>
@@ -149,7 +142,7 @@ export default function ServiceDetail() {
         {/* FAQ Section */}
         {faq?.length > 0 && (
           <motion.div variants={fadeUp}>
-            <h2 className="text-3xl font-bold text-[#DC2828] mb-6 text-center">FAQs</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent">FAQs</h2>
             <div className="space-y-4 max-w-3xl mx-auto">
               {faq.map((item, idx) => (
                 <motion.details
@@ -158,8 +151,8 @@ export default function ServiceDetail() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0, transition: { delay: idx * 0.1 } }}
                 >
-                  <summary className="font-semibold cursor-pointer">{item.question}</summary>
-                  <p className="mt-2 text-gray-400">{item.answer}</p>
+                  <summary className="font-semibold cursor-pointer text-white">{item.question}</summary>
+                  <p className="mt-2 text-gray-300">{item.answer}</p>
                 </motion.details>
               ))}
             </div>
@@ -169,15 +162,12 @@ export default function ServiceDetail() {
         {/* Pricing Section */}
         {pricing?.length > 0 && (
           <motion.div variants={fadeUp}>
-            <h2 className="text-3xl font-bold text-[#DC2828] mb-6 text-center">Pricing</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#9016B5] to-[#245EBD] bg-clip-text text-transparent">Pricing</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {pricing.map((p, idx) => (
                 <motion.div
                   key={idx}
-                  className="bg-[#0E1A2A] p-6 rounded-3xl shadow-lg hover:scale-105 transition transform border border-transparent hover:border-[#DC2828]"
-                  whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0, transition: { delay: idx * 0.1 } }}
+                  className="bg-[#0E1A2A] p-6 rounded-3xl shadow-lg hover:scale-105 transition transform border border-transparent hover:border-gradient-to-r hover:from-[#9016B5] hover:to-[#245EBD]"
                 >
                   <h3 className="text-xl font-semibold mb-3">{p.plan}</h3>
                   <p className="text-gray-300 text-lg mb-2">{p.price}</p>
@@ -195,10 +185,8 @@ export default function ServiceDetail() {
         {/* Call-to-Action */}
         <motion.div className="text-center mt-12" variants={fadeUp}>
           <Link
-              to="/contact"
-            className="px-8 py-3 text-white bg-[#DC2828] rounded-full font-semibold hover:bg-transparent hover:text-[#DC2828] hover:border hover:border-[#DC2828] transition"
-            whileHover={{ scale: 1.05, backgroundColor: "none", color: "#DC2828" }}
-            whileTap={{ scale: 0.95 }}
+            to="/contact"
+            className="px-8 py-3 text-white bg-gradient-to-r from-[#9016B5] to-[#245EBD] rounded-full font-semibold hover:bg-transparent hover:text-[#9016B5] hover:border hover:border-[#9016B5] transition"
           >
             Contact Us for {service.title}
           </Link>
