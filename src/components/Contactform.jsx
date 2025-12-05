@@ -1,5 +1,5 @@
 import React from 'react';
-import contactus from '../assets/images/contactus.jpg';
+import contactus from '../assets/images/contact.webp';
 
 const Contactform = () => {
   return (
